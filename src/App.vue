@@ -5,7 +5,7 @@
 
 <script>
 import DateMount from "@/helpers/dateFormat";
-import moment from "moment";
+/*import moment from "moment";*/
 export default {
   name: "App",
   components: {
@@ -17,7 +17,7 @@ export default {
 
   mounted() {
     this.dates = dateFormat();
-    moment().format();
+    /*moment().format();*/
   },
 };
 </script>
