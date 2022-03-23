@@ -1,3 +1,6 @@
+var moment = require('moment');
+moment().format();
+
 const dates =
    ['2022-06-20',
       '2022-08-03',
@@ -20,7 +23,7 @@ const dateFormat = (date) => {
       weekday: "long",
       month: "long",
       day: "numeric"
-   }).format(new Date(date));
+   }).moment().format(new Date(date));
 
 }
 
