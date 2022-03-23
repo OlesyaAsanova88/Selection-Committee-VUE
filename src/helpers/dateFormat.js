@@ -24,4 +24,6 @@ const dateFormat = (date) => {
 
 }
 
-export default dates.map((date) => dateFormat(date));
+const d = dates.map((date) => dateFormat(date));
+
+export default dateFormat();

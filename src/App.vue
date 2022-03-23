@@ -16,7 +16,7 @@ export default {
   }),
 
   mounted() {
-    this.dates = dateArray.map((date) => dateFormat(date));
+    this.dates = dateFormat();
   },
 };
 </script>
