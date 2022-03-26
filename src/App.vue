@@ -1,11 +1,13 @@
 <template>
-  <DataMount />
+  <DataMount :dates="dates" />
 </template>
 
 
 <script>
-import DateMount from "@/helpers/dateFormat";
-/*import moment from "moment";*/
+import DateMount from "./components/DateMoun.vue";
+import dateFormat from "@/helpers/dateFormat";
+import formateredDate from "@/helpers/dateFormat";
+
 export default {
   name: "App",
   components: {
@@ -17,7 +19,7 @@ export default {
 
   mounted() {
     this.dates = dateFormat();
-    /*moment().format();*/
+    formateredDate;
   },
 };
 </script>

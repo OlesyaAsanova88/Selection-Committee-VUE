@@ -87,21 +87,9 @@
       </tr>
 
       <tr class="number">
-        <td></td>
-        <td id="start-date">20 июня<br />понедельник</td>
-        <td>3 августа<br />среда</td>
-        <td>4 августа<br />четверг</td>
-        <td>8 августа<br />понедельник</td>
-        <td>9 августа<br />вторник</td>
-        <td>10 августа<br />среда</td>
-        <td>12 августа<br />пятница</td>
-        <td>13 августа<br />суббота</td>
-        <td>14 августа<br />воскресенье</td>
-        <td>15 августа<br />понедельник</td>
-        <td>16 августа<br />вторник</td>
-        <td>17 августа<br />среда</td>
-        <td>19 августа<br />пятница</td>
-        <td id="end-date">24 августа<br />среда</td>
+        <td v-for="(date, i) in dates" :key="`i-${date}`" id="start-date">
+          {{ i }}
+        </td>
       </tr>
 
       <tr>
@@ -150,7 +138,31 @@
   </div>
 </template>
 
+<script>
+export default {
+  props: {
+    dates: [String],
+  },
+  mounted() {
+    const data = this.dates;
 
+    return Object.keys(data)
+      .map((date) => {
+        return {
+          date: date,
+          data: data[dates],
+        };
+      })
+      .sort(function (a, b) {
+        let dateA = new Date(a.date);
+        let dateB = new Date(b.date);
+
+        return dateA - dateB;
+      })
+      .reverse();
+  },
+};
+</script>
 
 
 
